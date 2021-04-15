@@ -36,7 +36,7 @@ for i in range(len(r_cloud)):
         cloud_over=0
         r_common.append(common)
         r_cloud_over.append(cloud_over)
-        r_track_over.append(rack_over)
+        r_track_over.append(track_over)
     
 
 fig.add_trace(go.Barpolar(
