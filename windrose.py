@@ -9,7 +9,7 @@ r_common=[]
 r_track_over=[]
 r_cloud_over=[]
 
-for i in range(len(cloud)):
+for i in range(len(r_cloud)):
     cloud=r_cloud[i]
     track=r_track[i]
     if(cloud>track):
@@ -46,13 +46,13 @@ fig.add_trace(go.Barpolar(
 ))
 
 fig.add_trace(go.Barpolar(
-    r=r_cloud,
+    r=r_cloud_over,
     name='Cloud',
     marker_color='rgba(100,150,201,0.5)'
 ))
 
 fig.add_trace(go.Barpolar(
-    r=r_track,
+    r=r_track_over,
     name='Track',
     marker_color='rgba(10,120,245,0.5)'
 ))
