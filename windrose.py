@@ -1,7 +1,18 @@
 import plotly.express as px
-df = px.data.wind()
-print(df)
-fig = px.bar_polar(df, r="frequency", theta="direction",
-                   color="strength", template="plotly_dark",
-                   color_discrete_sequence= px.colors.sequential.Plasma_r)
-fig.write_image("windplotly.png")
+fig = go.Figure()
+
+fig.add_trace(go.Barpolar(
+    r=[77.5, 72.5, 70.0, 45.0, 22.5, 42.5, 40.0, 62.5],
+    name='11-14 m/s',
+    marker_color='rgb(106,81,163)'
+))
+fig.update_traces(text=['North', 'N-E', 'East', 'S-E', 'South', 'S-W', 'West', 'N-W'])
+fig.update_layout(
+    title='Wind Speed Distribution in Laurel, NE',
+    font_size=16,
+    legend_font_size=16,
+    polar_radialaxis_ticksuffix='%',
+    polar_angularaxis_rotation=90,
+
+)
+fig.show()
