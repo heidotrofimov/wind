@@ -65,7 +65,7 @@ fig.update_layout(
     polar_angularaxis_rotation=90,
 
 )
-fig.show()
+fig.write_image("Thompson_reanalysis.png")
 
 
 
