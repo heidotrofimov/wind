@@ -11,6 +11,14 @@ directions=mock_dir
 r_track=[19, 6, 6, 8, 8, 21,45, 22 ]
 r_cloud=[53, 29, 16, 17, 50, 116,136, 92 ]
 
+r_tr=[]
+r_cl=[]
+
+for i in range(len(r_track)):
+    r_tr.append(r_track[i]/max(r_track)*100)
+    r_cl.append(r_cloud[i]/max(r_cloud)*100)
+r_track=r_tr
+r_cloud=r_cl
 r_common=[]
 r_track_over=[]
 r_cloud_over=[]
