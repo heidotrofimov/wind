@@ -53,7 +53,7 @@ fig.add_trace(go.Barpolar(
 
 fig.add_trace(go.Barpolar(
     #r=r_track_over,
-    r = [0.5,1,2,2.5,3,4],
+    r = [50,100,20,2.5,3,4],
     theta = [35,70,120,155,205,240],
     name='Track',
     marker_color='rgba(10,120,245,0.5)'
