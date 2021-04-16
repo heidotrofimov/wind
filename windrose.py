@@ -43,6 +43,7 @@ for i in range(len(r_cloud)):
 fig.add_trace(go.Barpolar(
     r=r_common,
     theta = directions,
+    range_r=[0,100],
     name='Common',
     marker_color='rgba(106,81,163,0.5)'
 ))
@@ -50,6 +51,7 @@ fig.add_trace(go.Barpolar(
 fig.add_trace(go.Barpolar(
     r=r_cloud_over,
     theta = directions,
+    range_r=[0,100],
     name='Cloud',
     marker_color='rgba(100,150,201,0.5)'
 ))
@@ -57,6 +59,7 @@ fig.add_trace(go.Barpolar(
 fig.add_trace(go.Barpolar(
     r=r_track_over,
     theta = directions,
+    range_r=[0,100],
     name='Track',
     marker_color='rgba(10,120,245,0.5)'
 ))
@@ -67,7 +70,7 @@ fig.update_layout(
     polar_radialaxis_ticksuffix='%',
     polar_angularaxis_rotation=90,
     direction='counterclockwise',
-    range_r=[0,100],
+    
    
 
 )
