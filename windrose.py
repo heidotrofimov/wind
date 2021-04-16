@@ -4,7 +4,7 @@ import numpy as np
 fig = go.Figure()
 mock_dir=[]
 directions=[10,30,50,70,90, 110, 130, 150, 170, 190, 210, 230, 250, 270, 290, 310, 330, 350]
-for i in range(directions):
+for i in range(len(directions)):
     new_dir=np.abs(directions[i]-360)
     mock_dir.append(new_dir)
     
