@@ -69,9 +69,14 @@ fig.add_trace(go.Barpolar(
 fig.update_layout(
     font_size=16,
     legend_font_size=16,
-    polar_radialaxis_ticksuffix='%',
-    polar_angularaxis_rotation=180,
+    polar_radialaxis_ticksuffix='',
+    polar_angularaxis_rotation=90,
     direction='clockwise',
+    polar_angularaxis=dict(
+        tickmode = 'array',
+        tickvals = [1, 3, 5, 7, 9, 11],
+        ticktext = ['One', 'Three', 'Five', 'Seven', 'Nine', 'Eleven']
+    )
     
    
 
