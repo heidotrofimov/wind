@@ -42,27 +42,26 @@ for i in range(len(r_cloud)):
 
 fig.add_trace(go.Barpolar(
     r=r_common,
-    theta = directions,
+    #theta = directions,
     name='Common',
     marker_color='rgba(106,81,163,0.5)'
 ))
 
 fig.add_trace(go.Barpolar(
     r=r_cloud_over,
-    theta = directions,
+    #theta = directions,
     name='Cloud',
     marker_color='rgba(100,150,201,0.5)'
 ))
 
 fig.add_trace(go.Barpolar(
     r=r_track_over,
-    theta = directions,
+    #theta = directions,
     name='Track',
     marker_color='rgba(10,120,245,0.5)'
 ))
 
 fig.update_layout(
-    title='Wind Speed Distribution in Laurel, NE',
     font_size=16,
     legend_font_size=16,
     polar_radialaxis_ticksuffix='%',
