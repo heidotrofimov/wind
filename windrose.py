@@ -42,13 +42,15 @@ for i in range(len(r_cloud)):
 fig.add_trace(go.Barpolar(
     r=r_common,
     name='Common',
-    marker_color='rgba(106,81,163,0.5)'
+    marker_color='rgba(106,81,163,0.5)',
+    theta="direction"
 ))
 
 fig.add_trace(go.Barpolar(
     r=r_cloud_over,
     name='Cloud',
-    marker_color='rgba(100,150,201,0.5)'
+    marker_color='rgba(100,150,201,0.5)',
+    theta="direction"
 ))
 
 fig.add_trace(go.Barpolar(
