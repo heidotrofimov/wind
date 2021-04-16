@@ -70,7 +70,7 @@ fig.update_layout(
     font_size=16,
     legend_font_size=16,
     polar_radialaxis_ticksuffix='%',
-    polar_angularaxis_rotation=90,
+    polar_angularaxis_rotation=180,
     direction='clockwise',
     
    
