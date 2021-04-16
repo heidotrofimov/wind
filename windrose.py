@@ -74,8 +74,8 @@ fig.update_layout(
     direction='clockwise',
     polar_angularaxis=dict(
         tickmode = 'array',
-        tickvals = [1, 3, 5, 7, 9, 11],
-        ticktext = ['One', 'Three', 'Five', 'Seven', 'Nine', 'Eleven']
+        tickvals = [0, 45, 90, 135, 180, 225,270,315],
+        ticktext = ['N', 'NE', 'E', 'SE', 'S', 'SW','W','NW']
     )
     
    
