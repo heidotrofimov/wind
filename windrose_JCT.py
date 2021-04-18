@@ -59,7 +59,7 @@ fig.add_trace(go.Barpolar(
     r=r_common,
  
     name='Common',
-    marker_color='rgba(106,81,163,0.5)'
+    marker_color='rgba(255,0,255,0.5)'
 ))
 
 fig.add_trace(go.Barpolar(
@@ -67,7 +67,7 @@ fig.add_trace(go.Barpolar(
     theta = directions,
     r=r_cloud_over,
     name='Cloud',
-    marker_color='rgba(100,150,201,0.5)'
+    marker_color='rgba(0,0,255,0.5)'
 ))
 
 fig.add_trace(go.Barpolar(
@@ -76,7 +76,7 @@ fig.add_trace(go.Barpolar(
     r=r_track_over,
 
     name='Track',
-    marker_color='rgba(10,120,245,0.5)'
+    marker_color='rgba(255,0,0,0.5)'
 ))
 
 fig.update_layout(
