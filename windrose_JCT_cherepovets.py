@@ -34,18 +34,16 @@ for i in range(len(r_cloud)):
         common=track
         cloud_over=cloud
         track_over=0
-        new_common=common/(1+(common/cloud_over))
-        new_cloud_over=cloud_over/(1+(common/cloud_over))
-        r_common.append(new_common)
+        new_cloud_over=cloud_over-common
+        r_common.append(common)
         r_cloud_over.append(new_cloud_over)
         r_track_over.append(track_over)
     elif(track>cloud):
         common=cloud
         cloud_over=0
         track_over=track
-        new_common=common/(1+(common/track_over))
-        new_track_over=track_over/(1+(common/track_over))
-        r_common.append(new_common)
+        new_track_over=track_over-common
+        r_common.append(common)
         r_cloud_over.append(cloud_over)
         r_track_over.append(new_track_over)
     else:
