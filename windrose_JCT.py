@@ -8,6 +8,10 @@ for i in range(len(directions)):
     new_dir=np.abs(directions[i]-360)
     mock_dir.append(new_dir)   
 directions=mock_dir
+
+track_ref=[45, 22, 19, 6, 6, 8, 8, 21, 23, 41]
+cloud_ref=[136, 92, 53, 29, 16, 17, 50, 116, 116, 158]
+
 r_track=[19, 6, 6, 8, 8, 21,45, 22 ]
 r_cloud=[53, 29, 16, 17, 50, 116,136, 92 ]
 
@@ -15,8 +19,8 @@ r_tr=[]
 r_cl=[]
 
 for i in range(len(r_track)):
-    r_tr.append(r_track[i]/max(r_track)*100)
-    r_cl.append(r_cloud[i]/max(r_cloud)*100)
+    r_tr.append(r_track[i]/max(track_ref)*100)
+    r_cl.append(r_cloud[i]/max(cloud_ref)*100)
 r_track=r_tr
 r_cloud=r_cl
 r_common=[]
