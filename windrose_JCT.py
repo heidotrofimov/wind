@@ -96,5 +96,5 @@ fig.update_layout(
 )
 
 fig.show()
-#fig.write_image("Thompson_reanalysis.png")
+fig.write_image("Thompson_JCT.png")
 
