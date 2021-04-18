@@ -57,7 +57,7 @@ fig.add_trace(go.Barpolar(
     r=r_common,
  
     name='Common',
-    marker_color='rgba(255,0,255,1.0)'
+    marker_color='rgba(255,0,255,0.5)'
 ))
 
 fig.add_trace(go.Barpolar(
