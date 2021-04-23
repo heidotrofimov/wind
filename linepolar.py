@@ -14,7 +14,7 @@ h_track=[52.95437452323148, 62.18468088513015, 61.400201730603854, 53.2086310547
 
 fig = go.Figure()
 
-fig.add_trace(data=go.Scatterpolar(
+fig.add_trace(go.Scatterpolar(
     r=h_track,
     theta=mock_dir,
     mode='lines',
