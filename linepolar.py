@@ -29,6 +29,13 @@ fig.add_trace(go.Scatterpolar(
 )
              )
 
+fig.add_trace(go.Scatterpolar(
+    r=r_cloud,
+    theta=mock_dir,
+    mode='lines',
+)
+             )
+
 fig.update_layout(
     font_size=16,
     legend_font_size=18,
