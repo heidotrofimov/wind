@@ -19,6 +19,7 @@ fig.add_trace(data=go.Scatterpolar(
     theta=mock_dir,
     mode='lines',
 )
+             )
 
 fig.update_layout(
     font_size=16,
