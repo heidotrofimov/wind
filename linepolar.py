@@ -29,5 +29,6 @@ fig.update_layout(
         tickvals = [0, 45, 90, 135, 180, 225,270,315],
         ticktext = ['N', 'NW', 'W', 'SW', 'S', 'SE','E','NE']
     )
+)
   
 fig.show()
