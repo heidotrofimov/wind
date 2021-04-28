@@ -62,33 +62,43 @@ def plot_probability_map(prob_map, figsize=(15, 15)):
 
 with rasterio.open(os.path.join(input_folder,identifier+"B01.jp2")) as dataset:
     B01 = dataset.read(1, out_shape=(dataset.height * 6, dataset.width * 6))
+    print(B01.shape)
 
 with rasterio.open(os.path.join(input_folder,identifier+"B02.jp2")) as dataset:
     B02 = dataset.read()
+    print(B02.shape)
     
 with rasterio.open(os.path.join(input_folder,identifier+"B04.jp2")) as dataset:
     B04 = dataset.read()
+    print(B04.shape)
     
 with rasterio.open(os.path.join(input_folder,identifier+"B05.jp2")) as dataset:
     B05 = dataset.read(1, out_shape=(dataset.height * 2, dataset.width * 2))
+    print(B05.shape)
     
 with rasterio.open(os.path.join(input_folder,identifier+"B08.jp2")) as dataset:
     B08 = dataset.read()
+    print(B08.shape)
     
 with rasterio.open(os.path.join(input_folder,identifier+"B8A.jp2")) as dataset:
     B8A = dataset.read(1, out_shape=(dataset.height * 2, dataset.width * 2))
+    print(B8A.shape)
     
 with rasterio.open(os.path.join(input_folder,identifier+"B09.jp2")) as dataset:
     B09 = dataset.read(1, out_shape=(dataset.height * 6, dataset.width * 6))
+    print(B09.shape)
     
 with rasterio.open(os.path.join(input_folder,identifier+"B10.jp2")) as dataset:
     B10 = dataset.read(1, out_shape=(dataset.height * 6, dataset.width * 6))
+    print(B10.shape)
     
 with rasterio.open(os.path.join(input_folder,identifier+"B11.jp2")) as dataset:
     B11 = dataset.read(1, out_shape=(dataset.height * 2, dataset.width * 2))
+    print(B11.shape)
     
 with rasterio.open(os.path.join(input_folder,identifier+"B12.jp2")) as dataset:
     B12 = dataset.read(1, out_shape=(dataset.height * 2, dataset.width * 2))
+    print(B12.shape)
 
 bands = np.array([np.dstack((B01[0]/10000.0,B02[0]/10000.0,B04[0]/10000.0,B05[0]/10000.0,B08[0]/10000.0,B8A[0]/10000.0,B09[0]/10000.0,B10[0]/10000.0,B11[0]/10000.0,B12[0]/10000.0))])
 
