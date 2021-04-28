@@ -73,5 +73,5 @@ for folder in os.listdir("/home/heido/scl_data/"):
             cloud_probs = cloud_detector.get_cloud_probability_maps(bands)
             mask = cloud_detector.get_cloud_masks(bands).astype(rasterio.uint8)
 
-            plot_cloud_mask(mask[0],folder)
+            plot_cloud_mask(mask[0],"/home/heido/scl_data/"+folder)
 
