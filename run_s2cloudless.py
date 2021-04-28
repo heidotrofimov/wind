@@ -29,7 +29,7 @@ for folder in os.listdir("/home/heido/scl_data/"):
 		
 
             with rasterio.open(os.path.join(input_folder,identifier+"B02.jp2")) as dataset:
-		B02 = dataset.read(out_shape=(dataset.count,int(dataset.height * 1),int(dataset.width * 1)),resampling=Resampling.bilinear)
+                B02 = dataset.read(out_shape=(dataset.count,int(dataset.height * 1),int(dataset.width * 1)),resampling=Resampling.bilinear)
 
 
             with rasterio.open(os.path.join(input_folder,identifier+"B04.jp2")) as dataset:
