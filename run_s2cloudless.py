@@ -20,7 +20,9 @@ def plot_cloud_mask(mask, input_folder,figsize=(15, 15), fig=None):
 
 for folder in os.listdir("/home/heido/scl_data/"):
     print(folder)
+    
     if("S2A_MSIL1C" in folder):
+	identifier=folder.split("_")[5]+"_"+folder.split("_")[2]+"_"
         for folder2 in os.listdir("/home/heido/scl_data/"+folder+"/GRANULE/"):
             input_folder="/home/heido/scl_data/"+folder+"/GRANULE/"+folder2+"/IMG_DATA"
 
