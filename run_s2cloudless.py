@@ -24,8 +24,8 @@ for folder in os.listdir("/home/heido/scl_data/"):
         for folder2 in os.listdir("/home/heido/scl_data/"+folder+"/GRANULE/"):
             input_folder="/home/heido/scl_data/"+folder+"/GRANULE/"+folder2+"/IMG_DATA"
 
-	    with rasterio.open(os.path.join(input_folder,identifier+"B01.jp2")) as dataset:
-	        B01 = dataset.read(out_shape=(dataset.count,int(dataset.height * 6),int(dataset.width * 6)),resampling=Resampling.bilinear)                  
+            with rasterio.open(os.path.join(input_folder,identifier+"B01.jp2")) as dataset:
+                B01 = dataset.read(out_shape=(dataset.count,int(dataset.height * 6),int(dataset.width * 6)),resampling=Resampling.bilinear)                  
 		
 
 	    with rasterio.open(os.path.join(input_folder,identifier+"B02.jp2")) as dataset:
