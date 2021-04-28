@@ -28,48 +28,48 @@ for folder in os.listdir("/home/heido/scl_data/"):
                 B01 = dataset.read(out_shape=(dataset.count,int(dataset.height * 6),int(dataset.width * 6)),resampling=Resampling.bilinear)                  
 		
 
-	    with rasterio.open(os.path.join(input_folder,identifier+"B02.jp2")) as dataset:
+            with rasterio.open(os.path.join(input_folder,identifier+"B02.jp2")) as dataset:
 		B02 = dataset.read(out_shape=(dataset.count,int(dataset.height * 1),int(dataset.width * 1)),resampling=Resampling.bilinear)
-		
-
-	    with rasterio.open(os.path.join(input_folder,identifier+"B04.jp2")) as dataset:
-		B04 = dataset.read(out_shape=(dataset.count,int(dataset.height * 1),int(dataset.width * 1)),resampling=Resampling.bilinear)
-		
-
-	    with rasterio.open(os.path.join(input_folder,identifier+"B05.jp2")) as dataset:
-		B05 = dataset.read(out_shape=(dataset.count,int(dataset.height * 2),int(dataset.width * 2)),resampling=Resampling.bilinear)
-		
-
-	    with rasterio.open(os.path.join(input_folder,identifier+"B08.jp2")) as dataset:
-		B08 = dataset.read(out_shape=(dataset.count,int(dataset.height * 1),int(dataset.width * 1)),resampling=Resampling.bilinear)
-		
-
-	    with rasterio.open(os.path.join(input_folder,identifier+"B8A.jp2")) as dataset:
-		B8A = dataset.read(out_shape=(dataset.count,int(dataset.height * 2),int(dataset.width * 2)),resampling=Resampling.bilinear)
-		
-
-	    with rasterio.open(os.path.join(input_folder,identifier+"B09.jp2")) as dataset:
-		B09 = dataset.read(out_shape=(dataset.count,int(dataset.height * 6),int(dataset.width * 6)),resampling=Resampling.bilinear)
-		
-
-	    with rasterio.open(os.path.join(input_folder,identifier+"B10.jp2")) as dataset:
-		B10 = dataset.read(out_shape=(dataset.count,int(dataset.height * 6),int(dataset.width * 6)),resampling=Resampling.bilinear)
-		
-
-	    with rasterio.open(os.path.join(input_folder,identifier+"B11.jp2")) as dataset:
-		B11 = dataset.read(out_shape=(dataset.count,int(dataset.height * 2),int(dataset.width * 2)),resampling=Resampling.bilinear)
-		
-
-	    with rasterio.open(os.path.join(input_folder,identifier+"B12.jp2")) as dataset:
-		B12 = dataset.read(out_shape=(dataset.count,int(dataset.height * 2),int(dataset.width * 2)),resampling=Resampling.bilinear)
-		
-
-	    bands = np.array([np.dstack((B01[0]/10000.0,B02[0]/10000.0,B04[0]/10000.0,B05[0]/10000.0,B08[0]/10000.0,B8A[0]/10000.0,B09[0]/10000.0,B10[0]/10000.0,B11[0]/10000.0,B12[0]/10000.0))])
 
 
-	    cloud_detector = S2PixelCloudDetector(threshold=0.4, average_over=22, dilation_size=11)  
-	    cloud_probs = cloud_detector.get_cloud_probability_maps(bands)
-	    mask = cloud_detector.get_cloud_masks(bands).astype(rasterio.uint8)
+            with rasterio.open(os.path.join(input_folder,identifier+"B04.jp2")) as dataset:
+                B04 = dataset.read(out_shape=(dataset.count,int(dataset.height * 1),int(dataset.width * 1)),resampling=Resampling.bilinear)
 
-	    plot_cloud_mask(mask[0],folder)
+
+            with rasterio.open(os.path.join(input_folder,identifier+"B05.jp2")) as dataset:
+                B05 = dataset.read(out_shape=(dataset.count,int(dataset.height * 2),int(dataset.width * 2)),resampling=Resampling.bilinear)
+
+
+            with rasterio.open(os.path.join(input_folder,identifier+"B08.jp2")) as dataset:
+                B08 = dataset.read(out_shape=(dataset.count,int(dataset.height * 1),int(dataset.width * 1)),resampling=Resampling.bilinear)
+
+
+            with rasterio.open(os.path.join(input_folder,identifier+"B8A.jp2")) as dataset:
+                B8A = dataset.read(out_shape=(dataset.count,int(dataset.height * 2),int(dataset.width * 2)),resampling=Resampling.bilinear)
+
+
+            with rasterio.open(os.path.join(input_folder,identifier+"B09.jp2")) as dataset:
+                B09 = dataset.read(out_shape=(dataset.count,int(dataset.height * 6),int(dataset.width * 6)),resampling=Resampling.bilinear)
+
+
+            with rasterio.open(os.path.join(input_folder,identifier+"B10.jp2")) as dataset:
+                B10 = dataset.read(out_shape=(dataset.count,int(dataset.height * 6),int(dataset.width * 6)),resampling=Resampling.bilinear)
+
+
+            with rasterio.open(os.path.join(input_folder,identifier+"B11.jp2")) as dataset:
+                B11 = dataset.read(out_shape=(dataset.count,int(dataset.height * 2),int(dataset.width * 2)),resampling=Resampling.bilinear)
+
+
+            with rasterio.open(os.path.join(input_folder,identifier+"B12.jp2")) as dataset:
+                B12 = dataset.read(out_shape=(dataset.count,int(dataset.height * 2),int(dataset.width * 2)),resampling=Resampling.bilinear)
+
+
+            bands = np.array([np.dstack((B01[0]/10000.0,B02[0]/10000.0,B04[0]/10000.0,B05[0]/10000.0,B08[0]/10000.0,B8A[0]/10000.0,B09[0]/10000.0,B10[0]/10000.0,B11[0]/10000.0,B12[0]/10000.0))])
+
+
+            cloud_detector = S2PixelCloudDetector(threshold=0.4, average_over=22, dilation_size=11)  
+            cloud_probs = cloud_detector.get_cloud_probability_maps(bands)
+            mask = cloud_detector.get_cloud_masks(bands).astype(rasterio.uint8)
+
+            plot_cloud_mask(mask[0],folder)
 
