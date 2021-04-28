@@ -58,10 +58,6 @@ def plot_probability_map(prob_map, figsize=(15, 15)):
 
 #["B01","B05","B8A","B09","B10","B11","B12"]
 
-with rasterio.open("example.tif") as dataset:
-
-    # resample data to target shape
-    data = dataset.read(out_shape=(dataset.count,int(dataset.height * 6,int(dataset.width * 6)),resampling=Resampling.bilinear)
 
 
 with rasterio.open(os.path.join(input_folder,identifier+"B01.jp2")) as dataset:
