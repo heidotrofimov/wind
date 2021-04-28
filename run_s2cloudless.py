@@ -61,7 +61,7 @@ def plot_probability_map(prob_map, figsize=(15, 15)):
 
 
 with rasterio.open(os.path.join(input_folder,identifier+"B01.jp2")) as dataset:
-    B01 = dataset.read(1, out_shape=(dataset.height * 6, dataset.width * 6))
+    B01 = dataset.read(out_shape=(dataset.height * 6, dataset.width * 6))
     print(B01.shape)
 
 with rasterio.open(os.path.join(input_folder,identifier+"B02.jp2")) as dataset:
