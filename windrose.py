@@ -76,9 +76,10 @@ fig.add_trace(go.Barpolar(
     marker_color='rgba(255,0,0,0.5)'
 ))
 
+    
 fig.update_layout(
-    font_size=16,
-    legend_font_size=18,
+    font_size=36,
+    legend_font_size=36,
     polar_radialaxis_ticksuffix='',
     polar_angularaxis_rotation=90,
     direction='clockwise',
@@ -86,7 +87,7 @@ fig.update_layout(
         tickmode = 'array',
         tickvals = [0, 45, 90, 135, 180, 225,270,315],
         ticktext = ['N', 'NW', 'W', 'SW', 'S', 'SE','E','NE']
-    )
+    ) 
     
    
 
