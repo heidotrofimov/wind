@@ -61,7 +61,7 @@ fig.add_trace(go.Barpolar(
     
     theta = directions,
     r=r_cloud_over,
-    mode = 'lines',
+
     name='Only clouds',
     marker_color='rgba(0,0,255,0.5)'
 ))
@@ -70,7 +70,7 @@ fig.add_trace(go.Barpolar(
     
     theta = directions,
     r=r_track_over,
-    mode = 'lines',
+
     name='Tracks',
     marker_color='rgba(255,0,0,0.5)'
 ))
