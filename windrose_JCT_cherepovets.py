@@ -80,10 +80,9 @@ fig.add_trace(go.Barpolar(
     name='Track',
     marker_color='rgba(255,0,0,0.5)'
 ))
-
 fig.update_layout(
-    font_size=16,
-    legend_font_size=16,
+    font_size=36,
+    legend_font_size=36,
     polar_radialaxis_ticksuffix='',
     polar_angularaxis_rotation=90,
     direction='clockwise',
