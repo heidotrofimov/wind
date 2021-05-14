@@ -63,7 +63,7 @@ fig.add_trace(go.Barpolar(
     
     theta = directions,
     r=r_cloud_over,
-    name='Cloud',
+    name='Only cloud',
     marker_color='rgba(0,0,255,0.5)'
 ))
 
