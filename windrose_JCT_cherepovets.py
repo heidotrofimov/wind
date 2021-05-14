@@ -60,7 +60,7 @@ fig.add_trace(go.Barpolar(
     theta = directions,
     r=r_common,
  
-    name='Common',
+    name='Clouds and tracks overlapping',
     marker_color='rgba(255,0,255,0.5)'
 ))
 
@@ -68,7 +68,7 @@ fig.add_trace(go.Barpolar(
     
     theta = directions,
     r=r_cloud_over,
-    name='Cloud',
+    name='Only cloud',
     marker_color='rgba(0,0,255,0.5)'
 ))
 
