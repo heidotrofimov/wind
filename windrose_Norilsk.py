@@ -55,7 +55,7 @@ fig.add_trace(go.Barpolar(
     theta = directions,
     r=r_common,
  
-    name='Clouds and tracks overlapping',
+    name='Track and cloud days overlapping',
     marker_color='rgba(255,0,255,1.0)'
 ))
 
@@ -63,7 +63,7 @@ fig.add_trace(go.Barpolar(
     
     theta = directions,
     r=r_cloud_over,
-    name='Only cloud',
+    name='Only-cloud days',
     marker_color='rgba(0,0,255,1.0)'
 ))
 
@@ -72,7 +72,7 @@ fig.add_trace(go.Barpolar(
     theta = directions,
     r=r_track_over,
 
-    name='Track',
+    name='Track days',
     marker_color='rgba(255,0,0,1.0)'
 ))
 
