@@ -32,7 +32,7 @@ for i in range(len(tracks)):
 
 if(sys.argv[1]=='all'):
     choice=abs_nr
-    color='rgba(0,255,0,1.0)'
+    color='rgba(0,128,0,1.0)'
     
 if(sys.argv[1]=='cloud'):
     choice=cloud_pr
