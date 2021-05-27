@@ -16,65 +16,40 @@ directions=mock_dir
 r_track=[13.157894736842104, 21.052631578947366, 13.157894736842104, 7.894736842105263, 10.526315789473683, 15.789473684210526, 13.157894736842104, 5.263157894736842, 7.894736842105263, 31.57894736842105, 63.1578947368421, 100.0, 92.10526315789474, 63.1578947368421, 81.57894736842105, 63.1578947368421, 18.421052631578945]
 
 
-r_cloud=[6.557377049180328, 13.114754098360656, 6.557377049180328, 4.918032786885246, 8.19672131147541, 6.557377049180328, 14.754098360655737, 27.86885245901639, 45.90163934426229, 85.24590163934425, 73.77049180327869, 93.44262295081968, 100.0, 80.32786885245902, 36.0655737704918, 39.34426229508197, 8.19672131147541]
+tracks=[ 5,  8,  5,  3,  4,  6,  5,  2,  3, 12, 24, 38, 35, 24, 31, 24,  7]
+clouds=[ 4,  8,  4,  3,  5,  4,  9, 17, 28, 52, 45, 57, 61, 49, 22, 24,  5]
+zeros=[ 39, 116,  87,  90,  89,  80, 126, 151, 222, 311, 367, 318, 283, 243, 212, 161,  84]
 
-r_common=[]
-r_track_over=[]
-r_cloud_over=[]
+abs_nr=[]
+cloud_pr=[]
+track_pr=[]
 
-for i in range(len(r_cloud)):
-    cloud=r_cloud[i]
-    track=r_track[i]
-    if(cloud>track):
-        common=track
-        cloud_over=cloud
-        track_over=0
-        new_cloud_over=cloud_over-common
-        r_common.append(common)
-        r_cloud_over.append(new_cloud_over)
-        r_track_over.append(track_over)
-    elif(track>cloud):
-        common=cloud
-        cloud_over=0
-        track_over=track
-        new_track_over=track_over-common
-        r_common.append(common)
-        r_cloud_over.append(cloud_over)
-        r_track_over.append(new_track_over)
-    else:
-        common=track
-        track_over=0
-        cloud_over=0
-        r_common.append(common)
-        r_cloud_over.append(cloud_over)
-        r_track_over.append(track_over)
+for i in range(len(tracks)):
+    abs_nr.append(tracks[i]+clouds[i]+zeros[i])
+    cloud_pr.append((tracks[i]+clouds[i])/(tracks[i]+clouds[i]+zeros[i]))
+    track_pr.append((tracks[i])/(tracks[i]+clouds[i]))
+
+if(sys.argv[1]=='all'):
+    choice=abs_nr
+    color='rgba(0,255,0,1.0)'
     
+if(sys.argv[1]=='cloud'):
+    choice=cloud_pr
+    color='rgba(0,0,255,1.0)'
+    
+if(sys.argv[1]=='track'):
+    choice=track_pr
+    color='rgba(255,0,0,1.0)'
+
 
 fig.add_trace(go.Barpolar(
    
     theta = directions,
-    r=r_common,
- 
-    name='Track and cloud days overlapping',
-    marker_color='rgba(255,0,255,1.0)'
+    r=choice,
+    marker_color=color
 ))
 
-fig.add_trace(go.Barpolar(
-    
-    theta = directions,
-    r=r_cloud_over,
-    name='Only-cloud days',
-    marker_color='rgba(0,0,255,1.0)'
-))
 
-fig.add_trace(go.Barpolar(
-    
-    theta = directions,
-    r=r_track_over,
-
-    name='Track days',
-    marker_color='rgba(255,0,0,1.0)'
-))
 
 fig.update_layout(
     font_size=36,
