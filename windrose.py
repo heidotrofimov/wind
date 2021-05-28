@@ -25,11 +25,11 @@ track_pr=[]
 
 for i in range(len(tracks)):
     abs_nr.append(tracks[i]+clouds[i]+zeros[i])
-    if(sys.argv[2]==abs):
+    if(sys.argv[2]=='abs'):
         cloud_pr.append(clouds[i])
     else:
         cloud_pr.append((tracks[i]+clouds[i])/(tracks[i]+clouds[i]+zeros[i]))
-    if(sys.argv[2]==abs):
+    if(sys.argv[2]=='abs'):
         track_pr.append(tracks[i])
     else:
         track_pr.append((tracks[i])/(tracks[i]+clouds[i]))
