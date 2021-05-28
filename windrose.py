@@ -43,9 +43,9 @@ r_common=[]
 r_track_over=[]
 r_cloud_over=[]
 
-for i in range(len(cloud_normalized)):
-    cloud=cloud_normalized[i]
-    track=track_normalized[i]
+for i in range(len(clouds_normalized)):
+    cloud=clouds_normalized[i]
+    track=tracks_normalized[i]
     if(cloud>track):
         common=track
         cloud_over=cloud
