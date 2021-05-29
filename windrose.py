@@ -103,37 +103,37 @@ else:
         if(clouds_normalized[i]>tracks_normalized[i]):
             track.append(tracks_normalized[i])
             cloud.append(clouds_normalized[i]-tracks_normalized[i])
-                fig.add_trace(go.Barpolar(
-   
-                    theta = directions,
-                    r=track,
-                    name='Tracks and clouds overlapping',
-                    marker_color='rgba(255,0,0,1.0)'
-                ))
-                fig.add_trace(go.Barpolar(
-   
-                    theta = directions,
-                    r=cloud,
-                    name='Tracks and clouds overlapping',
-                    marker_color='rgba(0,0,255,1.0)'
-                ))
+            fig.add_trace(go.Barpolar(
+
+                theta = directions,
+                r=track,
+                name='Tracks and clouds overlapping',
+                marker_color='rgba(255,0,0,1.0)'
+            ))
+            fig.add_trace(go.Barpolar(
+
+                theta = directions,
+                r=cloud,
+                name='Tracks and clouds overlapping',
+                marker_color='rgba(0,0,255,1.0)'
+            ))
         if(tracks_normalized[i]>clouds_normalized[i]):
             track.append(tracks_normalized[i]-clouds_normalized[i])
             cloud.append(clouds_normalized[i])
-                fig.add_trace(go.Barpolar(
-   
-                    theta = directions,
-                    r=cloud,
-                    name='Tracks and clouds overlapping',
-                    marker_color='rgba(0,0,255,1.0)'
-                ))
-                fig.add_trace(go.Barpolar(
-   
-                    theta = directions,
-                    r=track,
-                    name='Tracks and clouds overlapping',
-                    marker_color='rgba(255,0,0,1.0)'
-                ))
+            fig.add_trace(go.Barpolar(
+
+                theta = directions,
+                r=cloud,
+                name='Tracks and clouds overlapping',
+                marker_color='rgba(0,0,255,1.0)'
+            ))
+            fig.add_trace(go.Barpolar(
+
+                theta = directions,
+                r=track,
+                name='Tracks and clouds overlapping',
+                marker_color='rgba(255,0,0,1.0)'
+            ))
             
 
 
