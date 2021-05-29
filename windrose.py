@@ -93,16 +93,9 @@ if(sys.argv[1]!='together'):
         marker_color=color
     ))
 else:
-    fig = go.Figure()
-    fig.add_trace(go.Scatterpolar(
-        r = r_cloud_over,
-        theta = directions,
-        mode = 'lines',
-        name = 'Figure 8',
-        line_color = 'peru'
-    ))
 
-    '''
+
+
     fig.add_trace(go.Barpolar(
    
     theta = directions,
@@ -129,7 +122,7 @@ else:
         name='Tracks',
         marker_color='rgba(255,0,0,1.0)'
     ))
-    '''
+
 
 
 fig.update_layout(
