@@ -44,10 +44,13 @@ r_common=[]
 r_track_over=[]
 r_cloud_over=[]
 
+
+
 for i in range(len(clouds_normalized)):
     cloud=clouds_normalized[i]
     track=tracks_normalized[i]
     if(cloud>track):
+
         common=track
         cloud_over=cloud
         track_over=0
@@ -93,9 +96,48 @@ if(sys.argv[1]!='together'):
         marker_color=color
     ))
 else:
+    
+    for in in range(len(clouds_normalized)):
+        cloud=[]
+        track=[]
+        if(clouds_normalized[i]>tracks_normalized[i]):
+            track.append(tracks_normalized[i])
+            cloud.append(clouds_normalized[i]-tracks_normalized[i])
+                fig.add_trace(go.Barpolar(
+   
+                    theta = directions,
+                    r=track,
+                    name='Tracks and clouds overlapping',
+                    marker_color='rgba(255,0,0,1.0)'
+                ))
+                fig.add_trace(go.Barpolar(
+   
+                    theta = directions,
+                    r=cloud,
+                    name='Tracks and clouds overlapping',
+                    marker_color='rgba(0,0,255,1.0)'
+                ))
+        if(tracks_normalized[i]>clouds_normalized[i]):
+            track.append(tracks_normalized[i]-clouds_normalized[i])
+            cloud.append(clouds_normalized[i])
+                fig.add_trace(go.Barpolar(
+   
+                    theta = directions,
+                    r=cloud,
+                    name='Tracks and clouds overlapping',
+                    marker_color='rgba(0,0,255,1.0)'
+                ))
+                fig.add_trace(go.Barpolar(
+   
+                    theta = directions,
+                    r=track,
+                    name='Tracks and clouds overlapping',
+                    marker_color='rgba(255,0,0,1.0)'
+                ))
+            
 
 
-
+    '''
     fig.add_trace(go.Barpolar(
    
     theta = directions,
@@ -121,6 +163,7 @@ else:
         name='Tracks',
         marker_color='rgba(255,0,0,1.0)'
     ))
+    '''
 
 
 
