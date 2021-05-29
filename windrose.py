@@ -2,6 +2,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import numpy as np
 import sys
+import pandas as pd
 fig = go.Figure()
 mock_dir=[]
 #directions=[10,30,50,70,90, 110, 130, 150, 170, 190, 210, 230, 250, 270, 290, 310, 330, 350]
@@ -92,7 +93,10 @@ if(sys.argv[1]!='together'):
         marker_color=color
     ))
 else:
-    fig = px.line_polar(r=r_cloud_over, theta=directions, color="strength", line_close=True,
+    data = {'directions': directions, 'r_cloud_over': r_cloud_over}  
+   
+    df = pd.DataFrame(data)  
+    fig = px.line_polar(df,r='r_cloud_over', theta='directions', color="strength", line_close=True,
                     color_discrete_sequence=px.colors.sequential.Plasma_r,
                     template="plotly_dark",)
 
