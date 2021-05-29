@@ -101,8 +101,13 @@ else:
         cloud=[]
         track=[]
         if(clouds_normalized[i]>tracks_normalized[i]):
-            track.append(tracks_normalized[i])
-            cloud.append(clouds_normalized[i]-tracks_normalized[i])
+            for j in range(clouds_normalized):
+                if(j==i):
+                    track.append(tracks_normalized[i])
+                    cloud.append(clouds_normalized[i]-tracks_normalized[i])
+                else:
+                    cloud.append(0)
+                    track.append(0)
             fig.add_trace(go.Barpolar(
 
                 theta = directions,
@@ -118,8 +123,13 @@ else:
                 marker_color='rgba(0,0,255,1.0)'
             ))
         if(tracks_normalized[i]>clouds_normalized[i]):
-            track.append(tracks_normalized[i]-clouds_normalized[i])
-            cloud.append(clouds_normalized[i])
+            for j in range(clouds_normalized):
+                if(j==i):
+                    track.append(tracks_normalized[i]-clouds_normalized[i])
+                    cloud.append(clouds_normalized[i])
+                else:
+                    cloud.append(0)
+                    track.append(0)
             fig.add_trace(go.Barpolar(
 
                 theta = directions,
