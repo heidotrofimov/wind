@@ -108,7 +108,6 @@ else:
 
         theta = directions,
         r=r_cloud_over,
-        base = 'lines',
 
         name='Only clouds',
         marker_color='rgba(0,0,255,1.0)'
