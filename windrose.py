@@ -97,7 +97,7 @@ if(sys.argv[1]!='together'):
     ))
 else:
     
-    for in in range(len(clouds_normalized)):
+    for i in range(len(clouds_normalized)):
         cloud=[]
         track=[]
         if(clouds_normalized[i]>tracks_normalized[i]):
