@@ -96,7 +96,7 @@ else:
     data = {'directions': directions, 'r_cloud_over': r_cloud_over}  
    
     df = pd.DataFrame(data)  
-    fig = px.line_polar(df,r='r_cloud_over', theta='directions', color="strength", line_close=True,
+    fig = px.line_polar(df,r='r_cloud_over', theta='directions', line_close=True,
                     color_discrete_sequence=px.colors.sequential.Plasma_r,
                     template="plotly_dark",)
 
