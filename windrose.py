@@ -92,6 +92,11 @@ if(sys.argv[1]!='together'):
         marker_color=color
     ))
 else:
+    fig = px.line_polar(r=r_cloud_over, theta=directions, color="strength", line_close=True,
+                    color_discrete_sequence=px.colors.sequential.Plasma_r,
+                    template="plotly_dark",)
+
+    '''
     fig.add_trace(go.Barpolar(
    
     theta = directions,
@@ -99,7 +104,7 @@ else:
     name='Tracks and clouds overlapping',
     marker_color='rgba(255,0,255,1.0)'
     ))
-
+    
     fig.add_trace(go.Barpolar(
 
         theta = directions,
@@ -118,7 +123,7 @@ else:
         name='Tracks',
         marker_color='rgba(255,0,0,1.0)'
     ))
-
+    '''
 
 
 fig.update_layout(
