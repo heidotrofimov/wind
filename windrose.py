@@ -101,7 +101,7 @@ else:
         cloud=[]
         track=[]
         if(clouds_normalized[i]>tracks_normalized[i]):
-            for j in range(clouds_normalized):
+            for j in range(len(clouds_normalized)):
                 if(j==i):
                     track.append(tracks_normalized[i])
                     cloud.append(clouds_normalized[i]-tracks_normalized[i])
@@ -123,7 +123,7 @@ else:
                 marker_color='rgba(0,0,255,1.0)'
             ))
         if(tracks_normalized[i]>clouds_normalized[i]):
-            for j in range(clouds_normalized):
+            for j in range(len(clouds_normalized)):
                 if(j==i):
                     track.append(tracks_normalized[i]-clouds_normalized[i])
                     cloud.append(clouds_normalized[i])
